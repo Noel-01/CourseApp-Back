@@ -14,12 +14,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.mybatis.courses.entities.Course;
-import com.mybatis.courses.entities.Page;
 import com.mybatis.courses.services.ICourseService;
 
 
 @Component
-@Path("/course")
+@Path("/courses")
 public class CourseResource {
 	
 	@Autowired

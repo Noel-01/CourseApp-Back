@@ -13,7 +13,7 @@ import com.mybatis.courses.services.ITeacherService;
 
 
 @Component
-@Path("/teacher")
+@Path("/teachers")
 public class TeacherResource {
 	
 	@Autowired
