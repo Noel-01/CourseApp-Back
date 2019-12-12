@@ -22,5 +22,7 @@ public class Page {
 	private int totalElementos;
 	private int elementosPagina;
 	private List<?> list;
+	private int limit1;
+	private int limit2;
 	
 }

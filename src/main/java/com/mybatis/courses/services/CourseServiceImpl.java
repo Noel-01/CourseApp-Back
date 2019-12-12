@@ -45,8 +45,8 @@ public class CourseServiceImpl implements ICourseService {
 			throw new ElementNoExistException("No existe la página");
 		}
 
-		List<CourseDto> list = courseMapper.findActiveCourses(pagina, 5);
-		list.sort((x,y)-> x.getTitle().compareTo(y.getTitle()));
+		List<CourseDto> list = courseMapper.findActiveCourses(page.getLimit1(), 5);
+		//list.sort((x,y)-> x.getTitle().compareTo(y.getTitle()));
 		page.setList(list);
 		
 		return page;

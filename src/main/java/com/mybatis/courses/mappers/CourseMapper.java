@@ -25,7 +25,7 @@ public interface CourseMapper {
 
 	
 	@Select("select c.id, c.title, c.level, c.hours, t.name, c.state from courses c inner "
-			+ "join teachers t on c.teacherid = t.id where c.state = true limit #{pagenum}, #{contentnum}")
+			+ "join teachers t on c.teacherid = t.id where c.state = true order by c.title limit #{pagenum}, #{contentnum}")
 	@Results(value = { 
 			@Result(property = "title", column = "title"),
 			@Result(property = "level", column = "level"),
