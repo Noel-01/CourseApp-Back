@@ -1,6 +1,5 @@
 package com.mybatis.courses.controllers;
 
-import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -30,24 +29,16 @@ public class CourseResource {
 	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response create(@Valid @RequestBody Course course) {
-//		if(course.getTitle() == null || course.getLevel() == null || course.getState() == null) {
-//			return Response.status(500).entity("Falta por rellenar campos obligatorios").build();
-//		}
+	public Response create(@RequestBody Course course) {
 		return Response.ok().entity(cursoService.create(course)).build();
 	}
 	
 
-	
 	@GET
-	@Path("/activeCourses/{pagina}")
+	@Path("/activeCourses/{page}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response findActiveCourses(@PathParam("pagina") int pagina) {
-		Page page = cursoService.findActiveCourses(pagina);
-		System.out.println(page.getTotalPaginas());
-		System.out.println(page.getPaginaActual());
-		
-		return Response.ok().entity(page).build();
+	public Response findActiveCourses(@PathParam("page") int pag) {
+		return Response.ok().entity(cursoService.findActiveCourses(pag)).build();
 	}
 
 }

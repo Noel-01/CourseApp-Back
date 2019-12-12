@@ -19,6 +19,8 @@ public class TeacherServiceImpl implements ITeacherService {
 
 	@Override
 	public List<Teacher> getAll() {
+		log.info("Init getAll...");
+		
 		return teacherMapper.getAll();
 	}
 	

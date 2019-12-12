@@ -4,7 +4,9 @@ import com.mybatis.courses.entities.Page;
 
 public interface IPageService {
 
-	int totalPaginas();
+	int totalPages();
 	
-	Page paginaPide(int paginaPide);
+	Page getPage(int paginaPide);
+	
+	Page calculateLimits(int paginaPide);
 }
